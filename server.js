@@ -23,6 +23,7 @@ app.use(`/api/${apiRouter.Parking.route}`, apiRouter.Parking.dir);
 
 // @db
 connectDb(); 
+
 // @listen server
 const PORT = process.env.PORT;
 app.listen(PORT, console.log(`Server in on port ${PORT}`));
