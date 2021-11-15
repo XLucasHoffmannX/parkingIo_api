@@ -20,6 +20,7 @@ app.use(cors());
 // @ routes
 app.use(`/api/${apiRouter.GenerateId.route}`, apiRouter.GenerateId.dir);
 app.use(`/api/${apiRouter.Parking.route}`, apiRouter.Parking.dir);
+app.get('/', (req, res)=>{ res.json({ msg: "Api rodando!" }) })
 
 // @db
 connectDb(); 
