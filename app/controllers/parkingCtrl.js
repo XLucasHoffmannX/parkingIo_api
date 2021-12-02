@@ -65,9 +65,12 @@ export async function UpdateLotParking(req, res) {
             model,
             ref,
             category,
-            descripition,
-            createAt
+            descripition
         } = req.body;
+
+        let data = GenerateData();
+        data = data.slice(-8);
+        data = data.slice(0, -3);
 
         if (!ref) return res.status(400).json({ msg: "A referencia deve ser retornada!" });
 
@@ -79,7 +82,7 @@ export async function UpdateLotParking(req, res) {
             ref,
             category,
             descripition,
-            createAt
+            createAt: data
         })
 
         return res.json();
